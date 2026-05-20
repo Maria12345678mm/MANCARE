@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBites | Ghid de Mâncare Sănătoasă pentru Liceeni</title>
+    <style>
+        /* --- STILURI GENERALE (CSS) --- */
+        :root {
+            --primary-color: #2ec4b6; /* Verde-praz/Turcoaz modern */
+            --secondary-color: #ff9f1c; /* Portocaliu cald pentru accente de mâncare */
+            --dark-color: #011627; /* Bleumarin închis pentru text și contrast */
+            --light-color: #f6f7f8; /* Fundal curat */
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        /* --- HEADER & NAVIGARE --- */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(135deg, #2ec4b622, #ff9f1c22);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--white);
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e08a10;
+            transform: translateY(-2px);
+        }
+
+        /* --- MAIN CONTENT & SECTIONS --- */
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        section h2 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--light-color);
+            padding-bottom: 10px;
+        }
+
+        /* Grile pentru aranjare responsivă */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 6px;
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        /* Caseta specială pentru asumarea utilizării AI */
+        .ai-box {
+            background-color: #f1f9f9;
+            border-left: 5px solid var(--primary-color);
+            padding: 15px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* Formular simplu */
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+        }
+
+        form label {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        form input, form textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            margin-top: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        form button:hover {
+            background-color: #239b90;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Responsive pentru ecrane mici (Telefoane) */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+            }
+            nav ul {
+                margin-top: 15px;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Antet și Meniu (Conform Etapei 3) -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Smart<span>Bites</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#sfaturi">Sfaturi</a></li>
+                    <li><a href="#retete">Rețete Rapide</a></li>
+                    <li><a href="#mituri">Mituri Verificate</a></li>
+                    <li><a href="#sugestii">Sugestii</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Secțiune de Introducere / Hero -->
+    <div class="hero">
+        <h1>Mâncare deșteaptă pentru sesiuni lungi de învățare</h1>
+        <p>Un ghid creat special pentru liceenii care vor să își mențină energia la cote maxime fără să petreacă ore în șir în bucătărie.</p>
+        <a href="#retete" class="btn">Vezi Rețetele</a>
+    </div>
+
+    <!-- Conținutul Principal (Main) -->
+    <main>
+
+        <!-- Secțiunea 1: Sfaturi -->
+        <section id="sfaturi">
+            <h2>3 Reguli Simple pentru Energie Maximă</h2>
+            <p>Mâncarea este combustibilul creierului tău. În loc de snacks-uri procesate, încearcă să aplici aceste principii simple:</p>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <h3>1. Hidratarea pe primul loc</h3>
+                    <p>De multe ori, oboseala din timpul orelor provine din deshidratare. Ține mereu o sticlă de apă pe bancă.</p>
+                </div>
+                <div class="card">
+                    <h3>2. Grăsimi bune pentru creier</h3>
+                    <p>Nucile, alunele (nesărate) și semințele sunt perfecte pentru pauze. Conțin acizi grași care ajută memoria.</p>
+                </div>
+                <div class="card">
+                    <h3>3. Carbohidrați complecși</h3>
+                    <p>Pâinea integrală și ovăzul eliberează energie treptat, prevenind starea de somnolență de după masă.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secțiunea 2: Rețete Rapide -->
+        <section id="retete">
+            <h2>Rețete de 5 minute (Gata între două teme)</h2>
+            <p>Nu ai nevoie de talent de masterchef ca să pregătești ceva gustos și hrănitor. Încearcă aceste variante:</p>
+            
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Terci de ovăz la microunde</h3>
+                    <p><strong>Ingrediente:</strong> 4 linguri fulgi de ovăz, o cană de lapte (sau apă), o banană pisată, scorțișoară.<br><strong>Mod de preparare:</strong> Se pun toate în bol, se lasă 2 minute la microunde, se amestecă și se adaugă puțină miere.</p>
+                </div>
+                <div class="card">
+                    <h3>Toast cu avocado și ou</h3>
+                    <p><strong>Ingrediente:</strong> O felie de pâine integrală prăjită, jumătate de avocado pasat, un ou ochi sau fiert.<br><strong>Mod de preparare:</strong> Întinde avocado pe pâine, pune oul deasupra și presară puțin piper.</p>
+                </div>
+                <div class="card">
+                    <h3>Smoothie "Focus"</h3>
+                    <p><strong>Ingrediente:</strong> O mână de spanac, o cană de fructe de pădure congelate, un iaurt simplu și puțină apă.<br><strong>Mod de preparare:</strong> Pune-le pe toate în blender pentru 1 minut. Ideal înainte de testul la matematică!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secțiunea 3: Utilizarea Responsabilă AI & Verificare Mituri -->
+        <section id="mituri">
+            <h2>Inteligența Artificială vs. Adevărul din Farfurie</h2>
+            <p>Am analizat cele mai populare sfaturi despre nutriție generate de AI și le-am adaptat realității noastre de elevi:</p>
+            
+            <div class="card" style="margin-top: 15px;">
+                <p><strong>Mit generat adesea de AI:</strong> „Trebuie să elimini complet carbohidrații ca să fii sănătos.”</p>
+                <p style="color: #239b90; font-weight: 600; margin-top: 5px;"><strong>Corecția noastră umană:</strong> Fals! Creierul unui elev consumă glucoză pentru a funcționa. Cheia este să alegem carbohidrații buni (legume, cereale integrale), nu zahărul rafinat.</p>
+            </div>
+
+            <div class="ai-box">
+                <strong>Notă privind utilizarea GenAI (Regula 2.4):</strong> Structura acestor argumente și ideile de rețete au fost explorate cu ajutorul unui model LLM pentru eficientizare, însă întregul conținut a fost verificat, personalizat și adaptat manual pentru a corespunde nevoilor reale ale colegilor de clasă.
+            </div>
+        </section>
+
+        <!-- Secțiunea 4: Formular de Contact / Sugestii -->
+        <section id="sugestii">
+            <h2>Propune rețeta ta!</h2>
+            <p>Dacă ai un snack sănătos pe care îl prepari rapid, trimite-ni-l și îl vom adăuga în ghid.</p>
+            
+            <form action="#" method="POST" onsubmit="alert('Mulțumim! Rețeta ta va fi analizată de echipă.'); return false;">
+                <label for="nume">Numele tău:</label>
+                <input type="text" id="nume" name="nume" required placeholder="Ex: Andrei">
+
+                <label for="reteta-propusa">Descrie rețeta ta rapidă:</label>
+                <textarea id="reteta-propusa" name="reteta-propusa" rows="4" required placeholder="Ingrediente și mod de preparare..."></textarea>
+
+                <button type="submit">Trimite către colegi</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Subsol (Footer - Conform Regulilor) -->
+    <footer>
+        <p>&copy; 2026 Proiect realizat pentru Portal Proiecte Web Marinciuc</p>
+        <p>Autor: [Numele Tău] | Clasa: [Clasa Ta] | Coordonator: Tudor Lapp</p>
+    </footer>
+
+</body>
+</html>
